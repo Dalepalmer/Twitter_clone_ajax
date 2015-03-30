@@ -1,3 +1,5 @@
+<div class="jumbotron">
+
 <h1>Haikus</h1>
 <%  if current_user %>
   <%= current_user.email %>
@@ -8,9 +10,10 @@
 <%= link_to "Sign in", new_user_session_path %>
 
 <%= link_to "New Haiku", new_haiku_path, id: "new_link", remote: true %>
+</div>
 
-<div>
+<div class="container">
   <ul id="all_haikus">
-    <%= render @haikus %>
+    <%= render @haikus.reverse %>
   </ul>
 </div>

@@ -1,3 +1,6 @@
-<li>
-  <%= haiku.haiku %> (<%= haiku.created_at %>)
+<li class="haiku" id="haiku_<%= haiku.id %>">
+  "<%= haiku.haiku %>", <%= haiku.user.username %>
+
+  <span style="color: gray;">(<%= haiku.created_at %>)</span>
+  <%= button_to "delete", haiku_path(haiku), remote: true, method: 'delete' %>
 </li>

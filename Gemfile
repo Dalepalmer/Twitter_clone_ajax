@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootswatch-rails'
 
 
 group :development do

@@ -11,8 +11,10 @@ class HaikusController < ApplicationController
     @haiku.user = current_user
     if @haiku.save
       respond_to do |format|
-        flash[:notice] = "Your haiku is great! / Thank you for making such a / wonderful haiku."
-        format.html { redirect_to root_path }
+        format.html do
+          flash[:notice] = "Your haiku is great! / Thank you for making such a / wonderful haiku."
+          redirect_to root_path
+         end
         format.js
       end
     else
@@ -24,10 +26,13 @@ class HaikusController < ApplicationController
     end
   end
 
+  def update
+  end
+
   def destroy
-    @haiku = Haiku.destroy(param[:id])
+    @haiku = Haiku.destroy(params[:id])
     respond_to do |format|
-      format.html { redirect_to tasks_url }
+      format.html { redirect_to root_path }
       format.js
     end
   end

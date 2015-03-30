@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "bootswatch/yeti/variables";
+@import "bootswatch/cerulean/bootswatch";
+
+
+body {
+  background-image: url('http://www.wallpaper4me.com/images/wallpapers/city_lights_cherry_blossoms_w1.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jumbotron {
+  background: rgba(255, 255, 255, .77);
+  border: solid;
+}
+
+.haiku {
+  height: 200px;
+  background: rgba(255, 255, 255, .77);
+  margin: 1px;
+  border: solid cyan 2px;
+  width: 200px;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+div.container {
+  padding: 0;
+
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
