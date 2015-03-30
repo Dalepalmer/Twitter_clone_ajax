@@ -2,5 +2,12 @@
   "<%= haiku.haiku %>", <%= haiku.user.username %>
 
   <span style="color: gray;">(<%= haiku.created_at %>)</span>
-  <%= button_to "delete", haiku_path(haiku), remote: true, method: 'delete' %>
-</li>
+
+  <% if current_user == haiku.user %>
+    <%= link_to haiku_path(haiku), remote: true, method: 'delete', class: 'btn btn-danger' do %>
+    <span class="glyphicon glyphicon-remove"></span>
+  <% end %>
+  <% end %>
+  <%= link_to haiku_path(haiku), remote: true, method: 'patch', class: 'btn btn-warning' do %>
+  <span class="glyphicon glyphicon-star-empty"></span>
+<% end %>

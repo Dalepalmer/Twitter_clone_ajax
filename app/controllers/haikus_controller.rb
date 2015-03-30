@@ -6,6 +6,10 @@ class HaikusController < ApplicationController
     @haiku = Haiku.new
   end
 
+  def edit
+    @haiku = Haiku.find(params[:id])
+  end
+
   def create
     @haiku = Haiku.new(haiku_params)
     @haiku.user = current_user
@@ -27,6 +31,10 @@ class HaikusController < ApplicationController
   end
 
   def update
+    @haiku = Haiku.find(params[:id])
+    @user = current_user
+    
+
   end
 
   def destroy
