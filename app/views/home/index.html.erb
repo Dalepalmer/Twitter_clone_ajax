@@ -1,0 +1,16 @@
+<h1>Haikus</h1>
+<%  if current_user %>
+  <%= current_user.email %>
+  <%= link_to "Log out", destroy_user_session_path, :method => "delete" %>
+<% end %>
+
+<%= link_to "Sign up", new_user_registration_path %>
+<%= link_to "Sign in", new_user_session_path %>
+
+<%= link_to "New Haiku", new_haiku_path, id: "new_link", remote: true %>
+
+<div>
+  <ul id="all_haikus">
+    <%= render @haikus %>
+  </ul>
+</div>
